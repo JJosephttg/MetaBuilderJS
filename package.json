@@ -1,6 +1,10 @@
 {
   "name": "metabuilder-js",
   "packageManager": "yarn@3.3.0",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
   "devDependencies": {
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.15",
