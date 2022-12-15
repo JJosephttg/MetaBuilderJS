@@ -1,4 +1,4 @@
-import { createObjectBuilder } from '../src/create-object-builder';
+import { createObjectBuilder } from './create-object-builder';
 
 describe('Builder', () => {
   describe('setter methods', () => {

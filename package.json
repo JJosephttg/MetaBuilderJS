@@ -1,8 +1,13 @@
 {
   "name": "metabuilder-js",
+  "description": "A TypeScript-friendly factory to create fully fledged builders for objects",
+  "version": "0.0.0",
   "packageManager": "yarn@3.3.0",
+  "repository": "https://github.com/JJosephttg/MetaBuilderJS",
+  "author": "JJosephttg",
+  "keywords": ["js", "builder", "factory", "ts", "typescript", "node", "npm", "metabuilder"],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.app.json",
     "test": "jest"
   },
   "devDependencies": {
