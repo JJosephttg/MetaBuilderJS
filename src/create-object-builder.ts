@@ -1,10 +1,10 @@
 export type BuilderInstance<BuildType> = {
-  [P in keyof BuildType as `with${Capitalize<string & P>}`]: (value: BuildType[P]) => BuilderInstance<BuildType>;
+  [P in keyof BuildType as `with${Capitalize<string & P>}`]-?: (value: Required<BuildType>[P]) => BuilderInstance<BuildType>;
 } & {
   build: () => BuildType;
 };
 
-export function createObjectBuilder<BuildType extends object>(defaultObject: BuildType): () => BuilderInstance<BuildType> {
+export function createObjectBuilder<BuildType extends object>(defaultObject: Required<BuildType>): () => BuilderInstance<BuildType> {
   return () => {
     const builder: any = {};
     const currentObject = { ...defaultObject };
