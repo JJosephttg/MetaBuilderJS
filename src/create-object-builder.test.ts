@@ -48,5 +48,15 @@ describe('Builder', () => {
 
       expect(builder.build()).toEqual(refObject);
     });
+
+    it('does not change built object when build is used multiple times', () => {
+      const builder = createObjectBuilder({ hello: 'again' })();
+
+      const object1 = builder.build();
+      const object2 = builder.withHello('Something else').build();
+
+      expect(object1.hello).toBe('again');
+      expect(object2.hello).toBe('Something else');
+    })
   });
 });

@@ -10,7 +10,7 @@ export function createObjectBuilder<BuildType extends object>(defaultObject: Req
     const currentObject = { ...defaultObject };
 
     defineSetterMethods(builder, currentObject);
-    builder['build'] = () => currentObject;
+    builder['build'] = () => ({ ...currentObject });
 
     return builder;
   };
